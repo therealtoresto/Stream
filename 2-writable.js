@@ -7,6 +7,7 @@ const ws = fs.createWriteStream('copy.js', 'utf8');
 
 rs.on('data', buffer => {
     console.log('Copy ' + buffer.length + ' chars');
+    ws.write(buffer);
 });
 
 rs.on('end', () => {
